@@ -2,8 +2,6 @@ const express = require("express")
 const routes = express.Router()
 const controller = require("../controllers/MedicController")
 
-routes.use(authMiddleware)
-
 // SQL routes
 routes.post("/sql/create", controller.create)
 routes.post("/sql/read", controller.create)

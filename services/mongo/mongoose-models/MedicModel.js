@@ -1,5 +1,18 @@
 const mongoose = require("mongoose")
 
-const PatientSchema = new mongoose.Schema({})
+const MedicSchema = new mongoose.Schema({
+  nome: {
+    type: String,
+    required: true,
+  },
+  crm: {
+    type: String,
+    required: true,
+  },
+  especialidade: {
+    type: String,
+    required: true,
+  },
+})
 
-mongoose.model("Patient", PatientSchema)
+mongoose.model("Medic", MedicSchema)
