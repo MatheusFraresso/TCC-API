@@ -1,0 +1,5 @@
+require("./DiseaseModel")
+require("./DiseasePacientModel")
+require("./ExamModel")
+require("./MedicModel")
+require("./PatientModel")
