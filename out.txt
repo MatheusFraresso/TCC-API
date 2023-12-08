@@ -1,0 +1,5 @@
+
+> start
+> node index.js
+
+Server is up and running on port 3001

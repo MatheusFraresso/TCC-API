@@ -7,10 +7,12 @@ const {
 
 const sql = global.sql
 
+const table = "paciente"
+
 module.exports = {
   async create(req, res) {
     try {
-      const query = insertQuery("paciente", req.body)
+      const query = insertQuery(table, req.body)
       const result = await global.sql.query(query)
       return res.json(result)
     } catch (error) {
@@ -20,7 +22,7 @@ module.exports = {
   },
   async read(req, res) {
     try {
-      const query = selectQuery("paciente", req.params.id)
+      const query = selectQuery(table, req.params.id)
       const result = await global.sql.query(query)
       return res.json(result.rows)
     } catch (error) {
@@ -29,7 +31,7 @@ module.exports = {
   },
   async update(req, res) {
     try {
-      const query = updateQuery("paciente", req.params.id, req.body)
+      const query = updateQuery(table, req.params.id, req.body)
       const result = await global.sql.query(query)
       return res.status(200).send({ message: "Patient updated", data: result })
     } catch (error) {
@@ -38,7 +40,7 @@ module.exports = {
   },
   async delete(req, res) {
     try {
-      const query = deleteQuery("paciente", req.params.id)
+      const query = deleteQuery(table, req.params.id)
       const result = await global.sql.query(query)
       return res.status(200).send({ message: "Patient deleted", data: result })
     } catch (error) {
@@ -47,7 +49,7 @@ module.exports = {
   },
   async all(req, res) {
     try {
-      const result = await global.sql.query("select * from paciente")
+      const result = await global.sql.query("select * from" + table)
 
       return res.status(200).send(result.rows)
     } catch (error) {

@@ -25,11 +25,9 @@ const PatientSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  contato: {
-    nome: { type: String },
-    telefone: { type: String },
-    email: { type: String },
-  },
+  nome_contato: { type: String },
+  telefone_contato: { type: String },
+  email_contato: { type: String },
 })
 
 mongoose.model("Patient", PatientSchema)

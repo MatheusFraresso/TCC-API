@@ -10,10 +10,7 @@ require("./services/mongo/mongoose-models")
 mongoose.set("strictQuery", true)
 
 // Database connections
-mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_CONNECTION_STRING, {})
 
 sqlConnect()
 
